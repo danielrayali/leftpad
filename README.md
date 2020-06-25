@@ -4,7 +4,7 @@ Just a simple program that will pad text on the left to align it on the right. T
 
 ## Dependencies
 
-- C++11 compiler
+- g++ with C++11 support
 - Make
 
 ## Building
