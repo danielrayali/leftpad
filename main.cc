@@ -2,23 +2,9 @@
 #include <string>
 #include <fstream>
 
+#include "leftpad.h"
+
 using namespace std;
-
-void TrimWhitespace(string& line) {
-    for (size_t i = 0; i < line.size(); ++i) {
-        if (isspace(line.at(i)) == 0) {
-            line = line.substr(i);
-            break;
-        }
-    }
-
-    for (int i = line.size() - 1; i >= 0; --i) {
-        if (isspace(line.at(i)) == 0) {
-            line = line.substr(0, i + 1);
-            break;
-        }
-    }
-}
 
 void Usage(char* prog) {
     cout << "Usage: " << prog << " <margin> [input_file]" << endl;
@@ -53,18 +39,9 @@ int main(int argc, char* argv[]) {
     }
 
     string line;
+    Leftpad leftpad(margin);
     while (getline(*input, line)) {
-        TrimWhitespace(line);
-        if (line.size() == 0) {
-            cout << endl;
-        } else if (line.size() >= margin) {
-            cout << line << endl;
-        } else {
-            for (int i = 0; i < (margin - line.size()); ++i) {
-                cout << ' ';
-            }
-            cout << line << endl;
-        }
+        cout << leftpad.Process(line) << endl;
     }
     return 0;
 }
