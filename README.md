@@ -13,7 +13,7 @@ Just a simple program that will pad text on the left to align it on the right. T
 
 ## Running
 
-```bash
+```text
 $ ./leftpad 
 Usage: ./leftpad <margin> [input_file]
 <margin> is required. [input_file] is optional. If [input_file] unspecfied, default is standard input.
