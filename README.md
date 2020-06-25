@@ -14,6 +14,9 @@ Just a simple program that will pad text on the left to align it on the right. T
 ## Running
 
 ```bash
+$ ./leftpad 
+Usage: ./leftpad <margin> [input_file]
+<margin> is required. [input_file] is optional. If [input_file] unspecfied, default is standard input.
 $ cat input.txt 
 But I must explain to you how all 
         this mistaken idea of denouncing of a 
